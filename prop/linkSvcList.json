@@ -1,0 +1,49 @@
+{
+    "rec": [
+        {
+            "svcId": "refuPayMng",
+            "tableName": "MAM1001T",
+            "desc": "폐기물 종류별 단가관리"
+        },
+        {
+            "svcId": "custDcPayMng",
+            "tableName": "MAM1002T",
+            "desc": "폐기물 추가단가 관리"
+        },
+        {
+            "svcId": "codeMstMng",
+            "tableName": "MAM1005T",
+            "desc": "코드마스터"
+        },
+        {
+            "svcId": "scalePOSMng",
+            "tableName": "MAM1008T",
+            "desc": "계량POS 관리"
+        },
+        {
+            "svcId": "custMng",
+            "tableName": "MAM1011T",
+            "desc": "운반.수집 업체관리"
+        },
+        {
+            "svcId": "custCarMng",
+            "tableName": "MAM1012T",
+            "desc": "운반.수집 업체차량관리"
+        },
+        {
+            "svcId": "scaleInfo",
+            "tableName": "MAM2001T",
+            "desc": "계량현황"
+        },
+        {
+            "svcId": "dayClosingMgmt",
+            "tableName": "MAM2021T",
+            "desc": "일 마감관리"
+        },
+        {
+            "svcId": "mthClosingMgmt",
+            "tableName": "MAM2022T",
+            "desc": "월 마감관리"
+        }
+    ]
+}

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="RestApiSQL">
+	
+	<!-- 테이블 데이터 조회 -->
+	<sql id="selectAll">
+		SELECT *
+	</sql>
+	<sql id="selectCnt">
+		SELECT COUNT(*) AS CNT
+	</sql>
+
+	<sql id="upcheList">
+		SELECT UPCHE_CODE FROM MAM1011T WHERE SAUP_NO = '71' AND GUBUN = '10'
+	</sql>
+
+	<sql id="condDefault">
+		WHERE
+			SAUP_NO = '71'
+			AND UPCHE_CODE IN (<include refid="upcheList" />)
+	</sql>
+
+	<sql id="condByScaleDay">
+		<include refid="condDefault" />
+		<if test="scaleDay != null and scaleDay != ''">
+			AND SCALE_DAY = #{scaleDay}
+		</if>
+	</sql>
+
+	<select id="selectListMAM1001T" resultType="hashMap">
+		/* RestApiSQL.selectListMAM1001T */
+		<include refid="selectAll" />
+		FROM
+			MAM1001T
+		ORDER BY 1, 2, 3
+	</select>
+	<select id="selectCntMAM1001T">
+		/* RestApiSQL.selectCntMAM1001T */
+		<include refid="selectCnt" />
+		FROM
+			MAM1001T
+	</select>
+
+	<select id="selectListMAM1002T" resultType="hashMap">
+		/* RestApiSQL.selectListMAM1002T */
+		<include refid="selectAll" />
+		FROM
+			MAM1002T
+		ORDER BY 1, 2, 3
+	</select>
+	<select id="selectCntMAM1002T">
+		/* RestApiSQL.selectCntMAM1002T */
+		<include refid="selectCnt" />
+		FROM
+			MAM1002T
+	</select>
+
+	<select id="selectListMAM1005T" resultType="hashMap">
+		/* RestApiSQL.selectListMAM1005T */
+		<include refid="selectAll" />
+		FROM
+			MAM1005T
+		ORDER BY 1, 2, 3
+	</select>
+	<select id="selectCntMAM1005T">
+		/* RestApiSQL.selectCntMAM1005T */
+		<include refid="selectCnt" />
+		FROM
+			MAM1005T
+	</select>
+
+	<select id="selectListMAM1008T" resultType="hashMap">
+		/* RestApiSQL.selectListMAM1008T */
+		<include refid="selectAll" />
+		FROM
+			MAM1008T
+		ORDER BY 1, 2
+	</select>
+	<select id="selectCntMAM1008T">
+		/* RestApiSQL.selectCntMAM1008T */
+		<include refid="selectCnt" />
+		FROM
+			MAM1008T
+	</select>
+	
+	<select id="selectListMAM1011T">
+		/* RestApiSQL.selectListMAM1011T */
+		<include refid="selectAll" />
+		FROM
+			MAM1011T
+		WHERE
+			SAUP_NO = '71'
+			AND GUBUN = '10'
+		ORDER BY 1, 2, 3
+	</select>
+	<select id="selectCntMAM1011T">
+		/* RestApiSQL.selectCntMAM1011T */
+		<include refid="selectCnt" />
+		FROM
+			MAM1011T
+		WHERE
+			SAUP_NO = '71'
+			AND GUBUN = '10'
+	</select>
+	
+	<select id="selectListMAM1012T">
+		/* RestApiSQL.selectListMAM1012T */
+		<include refid="selectAll" />
+		FROM
+			MAM1012T
+		<include refid="condDefault" />
+		ORDER BY 1, 2, 3
+	</select>
+	<select id="selectCntMAM1012T">
+		/* RestApiSQL.selectCntMAM1012T */
+		<include refid="selectCnt" />
+		FROM
+			MAM1012T
+		<include refid="condDefault" />
+	</select>
+	
+	<select id="selectListMAM2001T">
+		/* RestApiSQL.selectListMAM2001T */
+		<include refid="selectAll" />
+		FROM
+			MAM2001T
+		<include refid="condByScaleDay" />
+		ORDER BY 1, 2, 3, 4
+	</select>
+	<select id="selectCntMAM2001T">
+		/* RestApiSQL.selectCntMAM2001T */
+		<include refid="selectCnt" />
+		FROM
+			MAM2001T
+		<include refid="condByScaleDay" />
+	</select>
+	
+	<select id="selectListMAM2021T">
+		/* RestApiSQL.selectListMAM2021T */
+		<include refid="selectAll" />
+		FROM
+			MAM2021T
+		<include refid="condByScaleDay" />
+		ORDER BY 1, 2, 3, 4, 5
+	</select>
+	<select id="selectCntMAM2021T">
+		/* RestApiSQL.selectCntMAM2021T */
+		<include refid="selectCnt" />
+		FROM
+			MAM2021T
+		<include refid="condByScaleDay" />
+	</select>
+	
+	<select id="selectListMAM2022T">
+		/* RestApiSQL.selectListMAM2022T */
+		<include refid="selectAll" />
+		FROM
+			MAM2022T
+		<include refid="condByScaleDay" />
+		ORDER BY 1, 2, 3, 4, 5
+	</select>
+	<select id="selectCntMAM2022T">
+		/* RestApiSQL.selectCntMAM2022T */
+		<include refid="selectCnt" />
+		FROM
+			MAM2022T
+		<include refid="condByScaleDay" />
+	</select>
+</mapper>
