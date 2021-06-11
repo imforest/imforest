@@ -34,6 +34,7 @@ const createJsonRes = (result, desc, data) => {
 
 // 서비스ID를 path parameter로 사용하는 GET 메서드 서비스
 app.get('/link/rest/env/:svcId', (req, res) => {
+	console.log("listen");
 	const params = req.query;
 	const svcId = req.params.svcId;
 
@@ -60,7 +61,7 @@ app.get('/link/rest/env/:svcId', (req, res) => {
 		{
 			user: 'dcco',
 			password: 'dcco192',
-			connectString: 'kkbtest',
+			connectString: 'KKBTEST',
 		},
 		(err, conn) => {
 			if (err) {

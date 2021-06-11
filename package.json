@@ -1,17 +1,19 @@
 {
   "name": "dcco",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "pm2-dev start src/app.js"
+    "start": "pm2 start src/app.js --name restService",
+		"stop": "pm2 stop restService"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "mybatis-mapper": "^0.6.5",
-    "oracledb": "^5.1.0"
+    "oracledb": "^5.2.0",
+    "pm2": "^5.0.4"
   },
   "nodemonConfig": {},
   "devDependencies": {
@@ -24,5 +26,6 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^1.7.0",
     "prettier": "2.3.0"
-  }
+  },
+  "description": ""
 }
